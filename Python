@@ -1,0 +1,910 @@
+import os
+import pandas as pd
+import numpy as np
+
+pip install geihdanepy
+import geihdanepy as geih
+
+####Traer los datos de la librería GEIH, online, para cada mes, en este caso lo haré para el año 2015. La estructura es AAAA, Tipo de base de datos, ubicación####
+
+Enero_CG_A = geih.datos(2015,'Enero','Caracteristicas','Area')
+Enero_Des_A = geih.datos(2015,'Enero','Desocupados','Area')
+Enero_FT_A = geih.datos(2015,'Enero','Fuerza','Area')
+Enero_Ina_A = geih.datos(2015,'Enero','Inactivos','Area')
+Enero_Ocu_A = geih.datos(2015,'Enero','Ocupados','Area')
+Enero_OA_A = geih.datos(2015,'Enero','Otras Actividades','Area')
+Enero_OI_A = geih.datos(2015,'Enero','Otros Ingresos','Area')
+Enero_VH_A = geih.datos(2015,'Enero','Vivienda','Area')
+
+Enero_CG_C = geih.datos(2015,'Enero','Caracteristicas','Cabecera')
+Enero_Des_C = geih.datos(2015,'Enero','Desocupados', 'Cabecera')
+Enero_FT_C = geih.datos(2015,'Enero','Fuerza', 'Cabecera')
+Enero_Ina_C = geih.datos(2015,'Enero','Inactivos', 'Cabecera')
+Enero_Ocu_C = geih.datos(2015,'Enero','Ocupados', 'Cabecera')
+Enero_OA_C = geih.datos(2015,'Enero','Otras Actividades', 'Cabecera')
+Enero_OI_C = geih.datos(2015,'Enero','Otros Ingresos', 'Cabecera')
+Enero_VH_C = geih.datos(2015,'Enero','Vivienda', 'Cabecera')
+
+Enero_CG_R = geih.datos(2015,'Enero','Caracteristicas','Resto')
+Enero_Des_R = geih.datos(2015,'Enero','Desocupados', 'Resto')
+Enero_FT_R = geih.datos(2015,'Enero','Fuerza', 'Resto')
+Enero_Ina_R = geih.datos(2015,'Enero','Inactivos', 'Resto')
+Enero_Ocu_R = geih.datos(2015,'Enero','Ocupados', 'Resto')
+Enero_OA_R = geih.datos(2015,'Enero','Otras Actividades', 'Resto')
+Enero_OI_R = geih.datos(2015,'Enero','Otros Ingresos', 'Resto')
+Enero_VH_R = geih.datos(2015,'Enero','Vivienda', 'Resto')
+
+Febrero_CG_A = geih.datos(2015,'Febrero','Caracteristicas','Area')
+Febrero_Des_A = geih.datos(2015,'Febrero','Desocupados','Area')
+Febrero_FT_A = geih.datos(2015,'Febrero','Fuerza','Area')
+Febrero_Ina_A = geih.datos(2015,'Febrero','Inactivos','Area')
+Febrero_Ocu_A = geih.datos(2015,'Febrero','Ocupados','Area')
+Febrero_OA_A = geih.datos(2015,'Febrero','Otras Actividades','Area')
+Febrero_OI_A = geih.datos(2015,'Febrero','Otros Ingresos','Area')
+Febrero_VH_A = geih.datos(2015,'Febrero','Vivienda','Area')
+
+Febrero_CG_C = geih.datos(2015,'Febrero','Caracteristicas','Cabecera')
+Febrero_Des_C = geih.datos(2015,'Febrero','Desocupados', 'Cabecera')
+Febrero_FT_C = geih.datos(2015,'Febrero','Fuerza', 'Cabecera')
+Febrero_Ina_C = geih.datos(2015,'Febrero','Inactivos', 'Cabecera')
+Febrero_Ocu_C = geih.datos(2015,'Febrero','Ocupados', 'Cabecera')
+Febrero_OA_C = geih.datos(2015,'Febrero','Otras Actividades', 'Cabecera')
+Febrero_OI_C = geih.datos(2015,'Febrero','Otros Ingresos', 'Cabecera')
+Febrero_VH_C = geih.datos(2015,'Febrero','Vivienda', 'Cabecera')
+
+Febrero_CG_R = geih.datos(2015,'Febrero','Caracteristicas','Resto')
+Febrero_Des_R = geih.datos(2015,'Febrero','Desocupados', 'Resto')
+Febrero_FT_R = geih.datos(2015,'Febrero','Fuerza', 'Resto')
+Febrero_Ina_R = geih.datos(2015,'Febrero','Inactivos', 'Resto')
+Febrero_Ocu_R = geih.datos(2015,'Febrero','Ocupados', 'Resto')
+Febrero_OA_R = geih.datos(2015,'Febrero','Otras Actividades', 'Resto')
+Febrero_OI_R = geih.datos(2015,'Febrero','Otros Ingresos', 'Resto')
+Febrero_VH_R = geih.datos(2015,'Febrero','Vivienda', 'Resto')
+
+Marzo_CG_A = geih.datos(2015,'Marzo','Caracteristicas','Area')
+Marzo_Des_A = geih.datos(2015,'Marzo','Desocupados','Area')
+Marzo_FT_A = geih.datos(2015,'Marzo','Fuerza','Area')
+Marzo_Ina_A = geih.datos(2015,'Marzo','Inactivos','Area')
+Marzo_Ocu_A = geih.datos(2015,'Marzo','Ocupados','Area')
+Marzo_OA_A = geih.datos(2015,'Marzo','Otras Actividades','Area')
+Marzo_OI_A = geih.datos(2015,'Marzo','Otros Ingresos','Area')
+Marzo_VH_A = geih.datos(2015,'Marzo','Vivienda','Area')
+
+Marzo_CG_C = geih.datos(2015,'Marzo','Caracteristicas','Cabecera')
+Marzo_Des_C = geih.datos(2015,'Marzo','Desocupados', 'Cabecera')
+Marzo_FT_C = geih.datos(2015,'Marzo','Fuerza', 'Cabecera')
+Marzo_Ina_C = geih.datos(2015,'Marzo','Inactivos', 'Cabecera')
+Marzo_Ocu_C = geih.datos(2015,'Marzo','Ocupados', 'Cabecera')
+Marzo_OA_C = geih.datos(2015,'Marzo','Otras Actividades', 'Cabecera')
+Marzo_OI_C = geih.datos(2015,'Marzo','Otros Ingresos', 'Cabecera')
+Marzo_VH_C = geih.datos(2015,'Marzo','Vivienda', 'Cabecera')
+
+Marzo_CG_R = geih.datos(2015,'Marzo','Caracteristicas','Resto')
+Marzo_Des_R = geih.datos(2015,'Marzo','Desocupados', 'Resto')
+Marzo_FT_R = geih.datos(2015,'Marzo','Fuerza', 'Resto')
+Marzo_Ina_R = geih.datos(2015,'Marzo','Inactivos', 'Resto')
+Marzo_Ocu_R = geih.datos(2015,'Marzo','Ocupados', 'Resto')
+Marzo_OA_R = geih.datos(2015,'Marzo','Otras Actividades', 'Resto')
+Marzo_OI_R = geih.datos(2015,'Marzo','Otros Ingresos', 'Resto')
+Marzo_VH_R = geih.datos(2015,'Marzo','Vivienda', 'Resto')
+
+Abril_CG_A = geih.datos(2015,'Abril','Caracteristicas','Area')
+Abril_Des_A = geih.datos(2015,'Abril','Desocupados','Area')
+Abril_FT_A = geih.datos(2015,'Abril','Fuerza','Area')
+Abril_Ina_A = geih.datos(2015,'Abril','Inactivos','Area')
+Abril_Ocu_A = geih.datos(2015,'Abril','Ocupados','Area')
+Abril_OA_A = geih.datos(2015,'Abril','Otras Actividades','Area')
+Abril_OI_A = geih.datos(2015,'Abril','Otros Ingresos','Area')
+Abril_VH_A = geih.datos(2015,'Abril','Vivienda','Area')
+
+Abril_CG_C = geih.datos(2015,'Abril','Caracteristicas','Cabecera')
+Abril_Des_C = geih.datos(2015,'Abril','Desocupados', 'Cabecera')
+Abril_FT_C = geih.datos(2015,'Abril','Fuerza', 'Cabecera')
+Abril_Ina_C = geih.datos(2015,'Abril','Inactivos', 'Cabecera')
+Abril_Ocu_C = geih.datos(2015,'Abril','Ocupados', 'Cabecera')
+Abril_OA_C = geih.datos(2015,'Abril','Otras Actividades', 'Cabecera')
+Abril_OI_C = geih.datos(2015,'Abril','Otros Ingresos', 'Cabecera')
+Abril_VH_C = geih.datos(2015,'Abril','Vivienda', 'Cabecera')
+
+Abril_CG_R = geih.datos(2015,'Abril','Caracteristicas','Resto')
+Abril_Des_R = geih.datos(2015,'Abril','Desocupados', 'Resto')
+Abril_FT_R = geih.datos(2015,'Abril','Fuerza', 'Resto')
+Abril_Ina_R = geih.datos(2015,'Abril','Inactivos', 'Resto')
+Abril_Ocu_R = geih.datos(2015,'Abril','Ocupados', 'Resto')
+Abril_OA_R = geih.datos(2015,'Abril','Otras Actividades', 'Resto')
+Abril_OI_R = geih.datos(2015,'Abril','Otros Ingresos', 'Resto')
+Abril_VH_R = geih.datos(2015,'Abril','Vivienda', 'Resto')
+
+Mayo_CG_A = geih.datos(2015,'Mayo','Caracteristicas','Area')
+Mayo_Des_A = geih.datos(2015,'Mayo','Desocupados','Area')
+Mayo_FT_A = geih.datos(2015,'Mayo','Fuerza','Area')
+Mayo_Ina_A = geih.datos(2015,'Mayo','Inactivos','Area')
+Mayo_Ocu_A = geih.datos(2015,'Mayo','Ocupados','Area')
+Mayo_OA_A = geih.datos(2015,'Mayo','Otras Actividades','Area')
+Mayo_OI_A = geih.datos(2015,'Mayo','Otros Ingresos','Area')
+Mayo_VH_A = geih.datos(2015,'Mayo','Vivienda','Area')
+
+Mayo_CG_C = geih.datos(2015,'Mayo','Caracteristicas','Cabecera')
+Mayo_Des_C = geih.datos(2015,'Mayo','Desocupados', 'Cabecera')
+Mayo_FT_C = geih.datos(2015,'Mayo','Fuerza', 'Cabecera')
+Mayo_Ina_C = geih.datos(2015,'Mayo','Inactivos', 'Cabecera')
+Mayo_Ocu_C = geih.datos(2015,'Mayo','Ocupados', 'Cabecera')
+Mayo_OA_C = geih.datos(2015,'Mayo','Otras Actividades', 'Cabecera')
+Mayo_OI_C = geih.datos(2015,'Mayo','Otros Ingresos', 'Cabecera')
+Mayo_VH_C = geih.datos(2015,'Mayo','Vivienda', 'Cabecera')
+
+Mayo_CG_R = geih.datos(2015,'Mayo','Caracteristicas','Resto')
+Mayo_Des_R = geih.datos(2015,'Mayo','Desocupados', 'Resto')
+Mayo_FT_R = geih.datos(2015,'Mayo','Fuerza', 'Resto')
+Mayo_Ina_R = geih.datos(2015,'Mayo','Inactivos', 'Resto')
+Mayo_Ocu_R = geih.datos(2015,'Mayo','Ocupados', 'Resto')
+Mayo_OA_R = geih.datos(2015,'Mayo','Otras Actividades', 'Resto')
+Mayo_OI_R = geih.datos(2015,'Mayo','Otros Ingresos', 'Resto')
+Mayo_VH_R = geih.datos(2015,'Mayo','Vivienda', 'Resto')
+
+Junio_CG_A = geih.datos(2015,'Junio','Caracteristicas','Area')
+Junio_Des_A = geih.datos(2015,'Junio','Desocupados','Area')
+Junio_FT_A = geih.datos(2015,'Junio','Fuerza','Area')
+Junio_Ina_A = geih.datos(2015,'Junio','Inactivos','Area')
+Junio_Ocu_A = geih.datos(2015,'Junio','Ocupados','Area')
+Junio_OA_A = geih.datos(2015,'Junio','Otras Actividades','Area')
+Junio_OI_A = geih.datos(2015,'Junio','Otros Ingresos','Area')
+Junio_VH_A = geih.datos(2015,'Junio','Vivienda','Area')
+
+Junio_CG_C = geih.datos(2015,'Junio','Caracteristicas','Cabecera')
+Junio_Des_C = geih.datos(2015,'Junio','Desocupados', 'Cabecera')
+Junio_FT_C = geih.datos(2015,'Junio','Fuerza', 'Cabecera')
+Junio_Ina_C = geih.datos(2015,'Junio','Inactivos', 'Cabecera')
+Junio_Ocu_C = geih.datos(2015,'Junio','Ocupados', 'Cabecera')
+Junio_OA_C = geih.datos(2015,'Junio','Otras Actividades', 'Cabecera')
+Junio_OI_C = geih.datos(2015,'Junio','Otros Ingresos', 'Cabecera')
+Junio_VH_C = geih.datos(2015,'Junio','Vivienda', 'Cabecera')
+
+Junio_CG_R = geih.datos(2015,'Junio','Caracteristicas','Resto')
+Junio_Des_R = geih.datos(2015,'Junio','Desocupados', 'Resto')
+Junio_FT_R = geih.datos(2015,'Junio','Fuerza', 'Resto')
+Junio_Ina_R = geih.datos(2015,'Junio','Inactivos', 'Resto')
+Junio_Ocu_R = geih.datos(2015,'Junio','Ocupados', 'Resto')
+Junio_OA_R = geih.datos(2015,'Junio','Otras Actividades', 'Resto')
+Junio_OI_R = geih.datos(2015,'Junio','Otros Ingresos', 'Resto')
+Junio_VH_R = geih.datos(2015,'Junio','Vivienda', 'Resto')
+
+Julio_CG_A = geih.datos(2015,'Julio','Caracteristicas','Area')
+Julio_Des_A = geih.datos(2015,'Julio','Desocupados','Area')
+Julio_FT_A = geih.datos(2015,'Julio','Fuerza','Area')
+Julio_Ina_A = geih.datos(2015,'Julio','Inactivos','Area')
+Julio_Ocu_A = geih.datos(2015,'Julio','Ocupados','Area')
+Julio_OA_A = geih.datos(2015,'Julio','Otras Actividades','Area')
+Julio_OI_A = geih.datos(2015,'Julio','Otros Ingresos','Area')
+Julio_VH_A = geih.datos(2015,'Julio','Vivienda','Area')
+
+Julio_CG_C = geih.datos(2015,'Julio','Caracteristicas','Cabecera')
+Julio_Des_C = geih.datos(2015,'Julio','Desocupados', 'Cabecera')
+Julio_FT_C = geih.datos(2015,'Julio','Fuerza', 'Cabecera')
+Julio_Ina_C = geih.datos(2015,'Julio','Inactivos', 'Cabecera')
+Julio_Ocu_C = geih.datos(2015,'Julio','Ocupados', 'Cabecera')
+Julio_OA_C = geih.datos(2015,'Julio','Otras Actividades', 'Cabecera')
+Julio_OI_C = geih.datos(2015,'Julio','Otros Ingresos', 'Cabecera')
+Julio_VH_C = geih.datos(2015,'Julio','Vivienda', 'Cabecera')
+
+Julio_CG_R = geih.datos(2015,'Julio','Caracteristicas','Resto')
+Julio_Des_R = geih.datos(2015,'Julio','Desocupados', 'Resto')
+Julio_FT_R = geih.datos(2015,'Julio','Fuerza', 'Resto')
+Julio_Ina_R = geih.datos(2015,'Julio','Inactivos', 'Resto')
+Julio_Ocu_R = geih.datos(2015,'Julio','Ocupados', 'Resto')
+Julio_OA_R = geih.datos(2015,'Julio','Otras Actividades', 'Resto')
+Julio_OI_R = geih.datos(2015,'Julio','Otros Ingresos', 'Resto')
+Julio_VH_R = geih.datos(2015,'Julio','Vivienda', 'Resto')
+
+Agosto_CG_A = geih.datos(2015,'Agosto','Caracteristicas','Area')
+Agosto_Des_A = geih.datos(2015,'Agosto','Desocupados','Area')
+Agosto_FT_A = geih.datos(2015,'Agosto','Fuerza','Area')
+Agosto_Ina_A = geih.datos(2015,'Agosto','Inactivos','Area')
+Agosto_Ocu_A = geih.datos(2015,'Agosto','Ocupados','Area')
+Agosto_OA_A = geih.datos(2015,'Agosto','Otras Actividades','Area')
+Agosto_OI_A = geih.datos(2015,'Agosto','Otros Ingresos','Area')
+Agosto_VH_A = geih.datos(2015,'Agosto','Vivienda','Area')
+
+Agosto_CG_C = geih.datos(2015,'Agosto','Caracteristicas','Cabecera')
+Agosto_Des_C = geih.datos(2015,'Agosto','Desocupados', 'Cabecera')
+Agosto_FT_C = geih.datos(2015,'Agosto','Fuerza', 'Cabecera')
+Agosto_Ina_C = geih.datos(2015,'Agosto','Inactivos', 'Cabecera')
+Agosto_Ocu_C = geih.datos(2015,'Agosto','Ocupados', 'Cabecera')
+Agosto_OA_C = geih.datos(2015,'Agosto','Otras Actividades', 'Cabecera')
+Agosto_OI_C = geih.datos(2015,'Agosto','Otros Ingresos', 'Cabecera')
+Agosto_VH_C = geih.datos(2015,'Agosto','Vivienda', 'Cabecera')
+
+Agosto_CG_R = geih.datos(2015,'Agosto','Caracteristicas','Resto')
+Agosto_Des_R = geih.datos(2015,'Agosto','Desocupados', 'Resto')
+Agosto_FT_R = geih.datos(2015,'Agosto','Fuerza', 'Resto')
+Agosto_Ina_R = geih.datos(2015,'Agosto','Inactivos', 'Resto')
+Agosto_Ocu_R = geih.datos(2015,'Agosto','Ocupados', 'Resto')
+Agosto_OA_R = geih.datos(2015,'Agosto','Otras Actividades', 'Resto')
+Agosto_OI_R = geih.datos(2015,'Agosto','Otros Ingresos', 'Resto')
+Agosto_VH_R = geih.datos(2015,'Agosto','Vivienda', 'Resto')
+
+Septiembre_CG_A = geih.datos(2015,'Septiembre','Caracteristicas','Area')
+Septiembre_Des_A = geih.datos(2015,'Septiembre','Desocupados','Area')
+Septiembre_FT_A = geih.datos(2015,'Septiembre','Fuerza','Area')
+Septiembre_Ina_A = geih.datos(2015,'Septiembre','Inactivos','Area')
+Septiembre_Ocu_A = geih.datos(2015,'Septiembre','Ocupados','Area')
+Septiembre_OA_A = geih.datos(2015,'Septiembre','Otras Actividades','Area')
+Septiembre_OI_A = geih.datos(2015,'Septiembre','Otros Ingresos','Area')
+Septiembre_VH_A = geih.datos(2015,'Septiembre','Vivienda','Area')
+
+Septiembre_CG_C = geih.datos(2015,'Septiembre','Caracteristicas','Cabecera')
+Septiembre_Des_C = geih.datos(2015,'Septiembre','Desocupados', 'Cabecera')
+Septiembre_FT_C = geih.datos(2015,'Septiembre','Fuerza', 'Cabecera')
+Septiembre_Ina_C = geih.datos(2015,'Septiembre','Inactivos', 'Cabecera')
+Septiembre_Ocu_C = geih.datos(2015,'Septiembre','Ocupados', 'Cabecera')
+Septiembre_OA_C = geih.datos(2015,'Septiembre','Otras Actividades', 'Cabecera')
+Septiembre_OI_C = geih.datos(2015,'Septiembre','Otros Ingresos', 'Cabecera')
+Septiembre_VH_C = geih.datos(2015,'Septiembre','Vivienda', 'Cabecera')
+
+Septiembre_CG_R = geih.datos(2015,'Septiembre','Caracteristicas','Resto')
+Septiembre_Des_R = geih.datos(2015,'Septiembre','Desocupados', 'Resto')
+Septiembre_FT_R = geih.datos(2015,'Septiembre','Fuerza', 'Resto')
+Septiembre_Ina_R = geih.datos(2015,'Septiembre','Inactivos', 'Resto')
+Septiembre_Ocu_R = geih.datos(2015,'Septiembre','Ocupados', 'Resto')
+Septiembre_OA_R = geih.datos(2015,'Septiembre','Otras Actividades', 'Resto')
+Septiembre_OI_R = geih.datos(2015,'Septiembre','Otros Ingresos', 'Resto')
+Septiembre_VH_R = geih.datos(2015,'Septiembre','Vivienda', 'Resto')
+
+Octubre_CG_A = geih.datos(2015,'Octubre','Caracteristicas','Area')
+Octubre_Des_A = geih.datos(2015,'Octubre','Desocupados','Area')
+Octubre_FT_A = geih.datos(2015,'Octubre','Fuerza','Area')
+Octubre_Ina_A = geih.datos(2015,'Octubre','Inactivos','Area')
+Octubre_Ocu_A = geih.datos(2015,'Octubre','Ocupados','Area')
+Octubre_OA_A = geih.datos(2015,'Octubre','Otras Actividades','Area')
+Octubre_OI_A = geih.datos(2015,'Octubre','Otros Ingresos','Area')
+Octubre_VH_A = geih.datos(2015,'Octubre','Vivienda','Area')
+
+Octubre_CG_C = geih.datos(2015,'Octubre','Caracteristicas','Cabecera')
+Octubre_Des_C = geih.datos(2015,'Octubre','Desocupados', 'Cabecera')
+Octubre_FT_C = geih.datos(2015,'Octubre','Fuerza', 'Cabecera')
+Octubre_Ina_C = geih.datos(2015,'Octubre','Inactivos', 'Cabecera')
+Octubre_Ocu_C = geih.datos(2015,'Octubre','Ocupados', 'Cabecera')
+Octubre_OA_C = geih.datos(2015,'Octubre','Otras Actividades', 'Cabecera')
+Octubre_OI_C = geih.datos(2015,'Octubre','Otros Ingresos', 'Cabecera')
+Octubre_VH_C = geih.datos(2015,'Octubre','Vivienda', 'Cabecera')
+
+Octubre_CG_R = geih.datos(2015,'Octubre','Caracteristicas','Resto')
+Octubre_Des_R = geih.datos(2015,'Octubre','Desocupados', 'Resto')
+Octubre_FT_R = geih.datos(2015,'Octubre','Fuerza', 'Resto')
+Octubre_Ina_R = geih.datos(2015,'Octubre','Inactivos', 'Resto')
+Octubre_Ocu_R = geih.datos(2015,'Octubre','Ocupados', 'Resto')
+Octubre_OA_R = geih.datos(2015,'Octubre','Otras Actividades', 'Resto')
+Octubre_OI_R = geih.datos(2015,'Octubre','Otros Ingresos', 'Resto')
+Octubre_VH_R = geih.datos(2015,'Octubre','Vivienda', 'Resto')
+
+Noviembre_CG_A = geih.datos(2015,'Noviembre','Caracteristicas','Area')
+Noviembre_Des_A = geih.datos(2015,'Noviembre','Desocupados','Area')
+Noviembre_FT_A = geih.datos(2015,'Noviembre','Fuerza','Area')
+Noviembre_Ina_A = geih.datos(2015,'Noviembre','Inactivos','Area')
+Noviembre_Ocu_A = geih.datos(2015,'Noviembre','Ocupados','Area')
+Noviembre_OA_A = geih.datos(2015,'Noviembre','Otras Actividades','Area')
+Noviembre_OI_A = geih.datos(2015,'Noviembre','Otros Ingresos','Area')
+Noviembre_VH_A = geih.datos(2015,'Noviembre','Vivienda','Area')
+
+Noviembre_CG_C = geih.datos(2015,'Noviembre','Caracteristicas','Cabecera')
+Noviembre_Des_C = geih.datos(2015,'Noviembre','Desocupados', 'Cabecera')
+Noviembre_FT_C = geih.datos(2015,'Noviembre','Fuerza', 'Cabecera')
+Noviembre_Ina_C = geih.datos(2015,'Noviembre','Inactivos', 'Cabecera')
+Noviembre_Ocu_C = geih.datos(2015,'Noviembre','Ocupados', 'Cabecera')
+Noviembre_OA_C = geih.datos(2015,'Noviembre','Otras Actividades', 'Cabecera')
+Noviembre_OI_C = geih.datos(2015,'Noviembre','Otros Ingresos', 'Cabecera')
+Noviembre_VH_C = geih.datos(2015,'Noviembre','Vivienda', 'Cabecera')
+
+Noviembre_CG_R = geih.datos(2015,'Noviembre','Caracteristicas','Resto')
+Noviembre_Des_R = geih.datos(2015,'Noviembre','Desocupados', 'Resto')
+Noviembre_FT_R = geih.datos(2015,'Noviembre','Fuerza', 'Resto')
+Noviembre_Ina_R = geih.datos(2015,'Noviembre','Inactivos', 'Resto')
+Noviembre_Ocu_R = geih.datos(2015,'Noviembre','Ocupados', 'Resto')
+Noviembre_OA_R = geih.datos(2015,'Noviembre','Otras Actividades', 'Resto')
+Noviembre_OI_R = geih.datos(2015,'Noviembre','Otros Ingresos', 'Resto')
+Noviembre_VH_R = geih.datos(2015,'Noviembre','Vivienda', 'Resto')
+
+Diciembre_CG_A = geih.datos(2015,'Diciembre','Caracteristicas','Area')
+Diciembre_Des_A = geih.datos(2015,'Diciembre','Desocupados','Area')
+Diciembre_FT_A = geih.datos(2015,'Diciembre','Fuerza','Area')
+Diciembre_Ina_A = geih.datos(2015,'Diciembre','Inactivos','Area')
+Diciembre_Ocu_A = geih.datos(2015,'Diciembre','Ocupados','Area')
+Diciembre_OA_A = geih.datos(2015,'Diciembre','Otras Actividades','Area')
+Diciembre_OI_A = geih.datos(2015,'Diciembre','Otros Ingresos','Area')
+Diciembre_VH_A = geih.datos(2015,'Diciembre','Vivienda','Area')
+
+Diciembre_CG_C = geih.datos(2015,'Diciembre','Caracteristicas','Cabecera')
+Diciembre_Des_C = geih.datos(2015,'Diciembre','Desocupados', 'Cabecera')
+Diciembre_FT_C = geih.datos(2015,'Diciembre','Fuerza', 'Cabecera')
+Diciembre_Ina_C = geih.datos(2015,'Diciembre','Inactivos', 'Cabecera')
+Diciembre_Ocu_C = geih.datos(2015,'Diciembre','Ocupados', 'Cabecera')
+Diciembre_OA_C = geih.datos(2015,'Diciembre','Otras Actividades', 'Cabecera')
+Diciembre_OI_C = geih.datos(2015,'Diciembre','Otros Ingresos', 'Cabecera')
+Diciembre_VH_C = geih.datos(2015,'Diciembre','Vivienda', 'Cabecera')
+
+Diciembre_CG_R = geih.datos(2015,'Diciembre','Caracteristicas','Resto')
+Diciembre_Des_R = geih.datos(2015,'Diciembre','Desocupados', 'Resto')
+Diciembre_FT_R = geih.datos(2015,'Diciembre','Fuerza', 'Resto')
+Diciembre_Ina_R = geih.datos(2015,'Diciembre','Inactivos', 'Resto')
+Diciembre_Ocu_R = geih.datos(2015,'Diciembre','Ocupados', 'Resto')
+Diciembre_OA_R = geih.datos(2015,'Diciembre','Otras Actividades', 'Resto')
+Diciembre_OI_R = geih.datos(2015,'Diciembre','Otros Ingresos', 'Resto')
+Diciembre_VH_R = geih.datos(2015,'Diciembre','Vivienda', 'Resto')
+
+#Unir Bases
+
+##Enero##
+CG_Enero = pd.concat([Enero_CG_C, Enero_CG_R], axis=0)
+FL_Enero = pd.concat([Enero_FT_C, Enero_FT_R], axis=0)
+Ocu_Enero = pd.concat([Enero_Ocu_C, Enero_Ocu_R], axis=0)
+Des_Enero = pd.concat([Enero_Des_C, Enero_Des_R], axis=0)
+Ina_Enero = pd.concat([Enero_Ina_C, Enero_Ina_R], axis=0)
+OI_Enero = pd.concat([Enero_OI_C, Enero_OI_R], axis=0)
+OA_Enero = pd.concat([Enero_OA_C, Enero_OA_R], axis=0)
+
+##Febrero##
+CG_Febrero = pd.concat([Febrero_CG_C, Febrero_CG_R], axis=0)
+FL_Febrero = pd.concat([Febrero_FT_C, Febrero_FT_R], axis=0)
+Ocu_Febrero = pd.concat([Febrero_Ocu_C, Febrero_Ocu_R], axis=0)
+Des_Febrero = pd.concat([Febrero_Des_C, Febrero_Des_R], axis=0)
+Ina_Febrero = pd.concat([Febrero_Ina_C, Febrero_Ina_R], axis=0)
+OI_Febrero = pd.concat([Febrero_OI_C, Febrero_OI_R], axis=0)
+OA_Febrero = pd.concat([Febrero_OA_C, Febrero_OA_R], axis=0)
+
+##Marzo##
+CG_Marzo = pd.concat([Marzo_CG_C, Marzo_CG_R], axis=0)
+FL_Marzo = pd.concat([Marzo_FT_C, Marzo_FT_R], axis=0)
+Ocu_Marzo = pd.concat([Marzo_Ocu_C, Marzo_Ocu_R], axis=0)
+Des_Marzo = pd.concat([Marzo_Des_C, Marzo_Des_R], axis=0)
+Ina_Marzo = pd.concat([Marzo_Ina_C, Marzo_Ina_R], axis=0)
+OI_Marzo = pd.concat([Marzo_OI_C, Marzo_OI_R], axis=0)
+OA_Marzo = pd.concat([Marzo_OA_C, Marzo_OA_R], axis=0)
+
+##Abril##
+CG_Abril = pd.concat([Abril_CG_C, Abril_CG_R], axis=0)
+FL_Abril = pd.concat([Abril_FT_C, Abril_FT_R], axis=0)
+Ocu_Abril = pd.concat([Abril_Ocu_C, Abril_Ocu_R], axis=0)
+Des_Abril = pd.concat([Abril_Des_C, Abril_Des_R], axis=0)
+Ina_Abril = pd.concat([Abril_Ina_C, Abril_Ina_R], axis=0)
+OI_Abril = pd.concat([Abril_OI_C, Abril_OI_R], axis=0)
+OA_Abril = pd.concat([Abril_OA_C, Abril_OA_R], axis=0)
+
+##Mayo##
+CG_Mayo = pd.concat([Mayo_CG_C, Mayo_CG_R], axis=0)
+FL_Mayo = pd.concat([Mayo_FT_C, Mayo_FT_R], axis=0)
+Ocu_Mayo = pd.concat([Mayo_Ocu_C, Mayo_Ocu_R], axis=0)
+Des_Mayo = pd.concat([Mayo_Des_C, Mayo_Des_R], axis=0)
+Ina_Mayo = pd.concat([Mayo_Ina_C, Mayo_Ina_R], axis=0)
+OI_Mayo = pd.concat([Mayo_OI_C, Mayo_OI_R], axis=0)
+OA_Mayo = pd.concat([Mayo_OA_C, Mayo_OA_R], axis=0)
+
+##Junio##
+CG_Junio = pd.concat([Junio_CG_C, Junio_CG_R], axis=0)
+FL_Junio = pd.concat([Junio_FT_C, Junio_FT_R], axis=0)
+Ocu_Junio = pd.concat([Junio_Ocu_C, Junio_Ocu_R], axis=0)
+Des_Junio = pd.concat([Junio_Des_C, Junio_Des_R], axis=0)
+Ina_Junio = pd.concat([Junio_Ina_C, Junio_Ina_R], axis=0)
+OI_Junio = pd.concat([Junio_OI_C, Junio_OI_R], axis=0)
+OA_Junio = pd.concat([Junio_OA_C, Junio_OA_R], axis=0)
+
+##Julio##
+CG_Julio = pd.concat([Julio_CG_C, Julio_CG_R], axis=0)
+FL_Julio = pd.concat([Julio_FT_C, Julio_FT_R], axis=0)
+Ocu_Julio = pd.concat([Julio_Ocu_C, Julio_Ocu_R], axis=0)
+Des_Julio = pd.concat([Julio_Des_C, Julio_Des_R], axis=0)
+Ina_Julio = pd.concat([Julio_Ina_C, Julio_Ina_R], axis=0)
+OI_Julio = pd.concat([Julio_OI_C, Julio_OI_R], axis=0)
+OA_Julio = pd.concat([Julio_OA_C, Julio_OA_R], axis=0)
+
+##Agosto##
+CG_Agosto = pd.concat([Agosto_CG_C, Agosto_CG_R], axis=0)
+FL_Agosto = pd.concat([Agosto_FT_C, Agosto_FT_R], axis=0)
+Ocu_Agosto = pd.concat([Agosto_Ocu_C, Agosto_Ocu_R], axis=0)
+Des_Agosto = pd.concat([Agosto_Des_C, Agosto_Des_R], axis=0)
+Ina_Agosto = pd.concat([Agosto_Ina_C, Agosto_Ina_R], axis=0)
+OI_Agosto = pd.concat([Agosto_OI_C, Agosto_OI_R], axis=0)
+OA_Agosto = pd.concat([Agosto_OA_C, Agosto_OA_R], axis=0)
+
+##Septiembre##
+CG_Septiembre = pd.concat([Septiembre_CG_C, Septiembre_CG_R], axis=0)
+FL_Septiembre = pd.concat([Septiembre_FT_C, Septiembre_FT_R], axis=0)
+Ocu_Septiembre = pd.concat([Septiembre_Ocu_C, Septiembre_Ocu_R], axis=0)
+Des_Septiembre = pd.concat([Septiembre_Des_C, Septiembre_Des_R], axis=0)
+Ina_Septiembre = pd.concat([Septiembre_Ina_C, Septiembre_Ina_R], axis=0)
+OI_Septiembre = pd.concat([Septiembre_OI_C, Septiembre_OI_R], axis=0)
+OA_Septiembre = pd.concat([Septiembre_OA_C, Septiembre_OA_R], axis=0)
+
+##Octubre##
+CG_Octubre = pd.concat([Octubre_CG_C, Octubre_CG_R], axis=0)
+FL_Octubre = pd.concat([Octubre_FT_C, Octubre_FT_R], axis=0)
+Ocu_Octubre = pd.concat([Octubre_Ocu_C, Octubre_Ocu_R], axis=0)
+Des_Octubre = pd.concat([Octubre_Des_C, Octubre_Des_R], axis=0)
+Ina_Octubre = pd.concat([Octubre_Ina_C, Octubre_Ina_R], axis=0)
+OI_Octubre = pd.concat([Octubre_OI_C, Octubre_OI_R], axis=0)
+OA_Octubre = pd.concat([Octubre_OA_C, Octubre_OA_R], axis=0)
+
+##Noviembre##
+CG_Noviembre = pd.concat([Noviembre_CG_C, Noviembre_CG_R], axis=0)
+FL_Noviembre = pd.concat([Noviembre_FT_C, Noviembre_FT_R], axis=0)
+Ocu_Noviembre = pd.concat([Noviembre_Ocu_C, Noviembre_Ocu_R], axis=0)
+Des_Noviembre = pd.concat([Noviembre_Des_C, Noviembre_Des_R], axis=0)
+Ina_Noviembre = pd.concat([Noviembre_Ina_C, Noviembre_Ina_R], axis=0)
+OI_Noviembre = pd.concat([Noviembre_OI_C, Noviembre_OI_R], axis=0)
+OA_Noviembre = pd.concat([Noviembre_OA_C, Noviembre_OA_R], axis=0)
+
+##Diciembre##
+CG_Diciembre = pd.concat([Diciembre_CG_C, Diciembre_CG_R], axis=0)
+FL_Diciembre = pd.concat([Diciembre_FT_C, Diciembre_FT_R], axis=0)
+Ocu_Diciembre = pd.concat([Diciembre_Ocu_C, Diciembre_Ocu_R], axis=0)
+Des_Diciembre = pd.concat([Diciembre_Des_C, Diciembre_Des_R], axis=0)
+Ina_Diciembre = pd.concat([Diciembre_Ina_C, Diciembre_Ina_R], axis=0)
+OI_Diciembre = pd.concat([Diciembre_OI_C, Diciembre_OI_R], axis=0)
+OA_Diciembre = pd.concat([Diciembre_OA_C, Diciembre_OA_R], axis=0)
+
+## Realizar el merge de todas las bases ##
+
+##ENERO##
+
+CG_FL_Enero = pd.merge(CG_Enero, FL_Enero, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop = ['Hogar_y', 'Regis_y', 'Clase_y', 'Mes_y', 'Dpto_y', 'Fex_c_2011_y', 'Area_y']
+CG_FL_Enero.drop(columns=columns_to_drop, inplace=True)
+
+CG_FL_OC_Enero = pd.merge(CG_FL_Enero, Ocu_Enero, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop2 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_Enero.drop(columns=columns_to_drop2, inplace=True)
+
+CG_FL_OC_DS_Enero = pd.merge(CG_FL_OC_Enero, Des_Enero, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop3 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_Enero.drop(columns=columns_to_drop3, inplace=True)
+
+CG_FL_OC_DS_IN_Enero = pd.merge(CG_FL_OC_DS_Enero, Ina_Enero, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop4 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_Enero.drop(columns=columns_to_drop4, inplace=True)
+
+CG_FL_OC_DS_IN_OI_Enero = pd.merge(CG_FL_OC_DS_IN_Enero, OI_Enero, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop5 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_OI_Enero.drop(columns=columns_to_drop5, inplace=True)
+
+Enero_2015 = pd.merge(CG_FL_OC_DS_IN_OI_Enero, OA_Enero, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop6 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+Enero_2015.drop(columns=columns_to_drop6, inplace=True)
+
+##FEBRERO##
+
+CG_FL_Febrero = pd.merge(CG_Febrero, FL_Febrero, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop = ['Hogar_y', 'Regis_y', 'Clase_y', 'Mes_y', 'Dpto_y', 'Fex_c_2011_y', 'Area_y']
+CG_FL_Febrero.drop(columns=columns_to_drop, inplace=True)
+
+CG_FL_OC_Febrero = pd.merge(CG_FL_Febrero, Ocu_Febrero, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop2 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_Febrero.drop(columns=columns_to_drop2, inplace=True)
+
+CG_FL_OC_DS_Febrero = pd.merge(CG_FL_OC_Febrero, Des_Febrero, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop3 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_Febrero.drop(columns=columns_to_drop3, inplace=True)
+
+CG_FL_OC_DS_IN_Febrero = pd.merge(CG_FL_OC_DS_Febrero, Ina_Febrero, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop4 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_Febrero.drop(columns=columns_to_drop4, inplace=True)
+
+CG_FL_OC_DS_IN_OI_Febrero = pd.merge(CG_FL_OC_DS_IN_Febrero, OI_Febrero, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop5 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_OI_Febrero.drop(columns=columns_to_drop5, inplace=True)
+
+Febrero_2015 = pd.merge(CG_FL_OC_DS_IN_OI_Febrero, OA_Febrero, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop6 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+Febrero_2015.drop(columns=columns_to_drop6, inplace=True)
+
+##MARZO##
+
+CG_FL_Marzo = pd.merge(CG_Marzo, FL_Marzo, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop = ['Hogar_y', 'Regis_y', 'Clase_y', 'Mes_y', 'Dpto_y', 'Fex_c_2011_y', 'Area_y']
+CG_FL_Marzo.drop(columns=columns_to_drop, inplace=True)
+
+CG_FL_OC_Marzo = pd.merge(CG_FL_Marzo, Ocu_Marzo, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop2 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_Marzo.drop(columns=columns_to_drop2, inplace=True)
+
+CG_FL_OC_DS_Marzo = pd.merge(CG_FL_OC_Marzo, Des_Marzo, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop3 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_Marzo.drop(columns=columns_to_drop3, inplace=True)
+
+CG_FL_OC_DS_IN_Marzo = pd.merge(CG_FL_OC_DS_Marzo, Ina_Marzo, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop4 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_Marzo.drop(columns=columns_to_drop4, inplace=True)
+
+CG_FL_OC_DS_IN_OI_Marzo = pd.merge(CG_FL_OC_DS_IN_Marzo, OI_Marzo, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop5 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_OI_Marzo.drop(columns=columns_to_drop5, inplace=True)
+
+Marzo_2015 = pd.merge(CG_FL_OC_DS_IN_OI_Marzo, OA_Marzo, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop6 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+Marzo_2015.drop(columns=columns_to_drop6, inplace=True)
+
+##ABRIL##
+
+CG_FL_Abril = pd.merge(CG_Abril, FL_Abril, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop = ['Hogar_y', 'Regis_y', 'Clase_y', 'Mes_y', 'Dpto_y', 'Fex_c_2011_y', 'Area_y']
+CG_FL_Abril.drop(columns=columns_to_drop, inplace=True)
+
+CG_FL_OC_Abril = pd.merge(CG_FL_Abril, Ocu_Abril, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop2 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_Abril.drop(columns=columns_to_drop2, inplace=True)
+
+CG_FL_OC_DS_Abril = pd.merge(CG_FL_OC_Abril, Des_Abril, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop3 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_Abril.drop(columns=columns_to_drop3, inplace=True)
+
+CG_FL_OC_DS_IN_Abril = pd.merge(CG_FL_OC_DS_Abril, Ina_Abril, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop4 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_Abril.drop(columns=columns_to_drop4, inplace=True)
+
+CG_FL_OC_DS_IN_OI_Abril = pd.merge(CG_FL_OC_DS_IN_Abril, OI_Abril, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop5 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_OI_Abril.drop(columns=columns_to_drop5, inplace=True)
+
+Abril_2015 = pd.merge(CG_FL_OC_DS_IN_OI_Abril, OA_Abril, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop6 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+Abril_2015.drop(columns=columns_to_drop6, inplace=True)
+
+##MAYO##
+
+CG_FL_Mayo = pd.merge(CG_Mayo, FL_Mayo, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop = ['Hogar_y', 'Regis_y', 'Clase_y', 'Mes_y', 'Dpto_y', 'Fex_c_2011_y', 'Area_y']
+CG_FL_Mayo.drop(columns=columns_to_drop, inplace=True)
+
+CG_FL_OC_Mayo = pd.merge(CG_FL_Mayo, Ocu_Mayo, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop2 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_Mayo.drop(columns=columns_to_drop2, inplace=True)
+
+CG_FL_OC_DS_Mayo = pd.merge(CG_FL_OC_Mayo, Des_Mayo, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop3 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_Mayo.drop(columns=columns_to_drop3, inplace=True)
+
+CG_FL_OC_DS_IN_Mayo = pd.merge(CG_FL_OC_DS_Mayo, Ina_Mayo, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop4 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_Mayo.drop(columns=columns_to_drop4, inplace=True)
+
+CG_FL_OC_DS_IN_OI_Mayo = pd.merge(CG_FL_OC_DS_IN_Mayo, OI_Mayo, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop5 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_OI_Mayo.drop(columns=columns_to_drop5, inplace=True)
+
+Mayo_2015 = pd.merge(CG_FL_OC_DS_IN_OI_Mayo, OA_Mayo, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop6 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+Mayo_2015.drop(columns=columns_to_drop6, inplace=True)
+
+##JUNIO##
+
+CG_FL_Junio = pd.merge(CG_Junio, FL_Junio, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop = ['Hogar_y', 'Regis_y', 'Clase_y', 'Mes_y', 'Dpto_y', 'Fex_c_2011_y', 'Area_y']
+CG_FL_Junio.drop(columns=columns_to_drop, inplace=True)
+
+CG_FL_OC_Junio = pd.merge(CG_FL_Junio, Ocu_Junio, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop2 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_Junio.drop(columns=columns_to_drop2, inplace=True)
+
+CG_FL_OC_DS_Junio = pd.merge(CG_FL_OC_Junio, Des_Junio, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop3 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_Junio.drop(columns=columns_to_drop3, inplace=True)
+
+CG_FL_OC_DS_IN_Junio = pd.merge(CG_FL_OC_DS_Junio, Ina_Junio, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop4 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_Junio.drop(columns=columns_to_drop4, inplace=True)
+
+CG_FL_OC_DS_IN_OI_Junio = pd.merge(CG_FL_OC_DS_IN_Junio, OI_Junio, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop5 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_OI_Junio.drop(columns=columns_to_drop5, inplace=True)
+
+Junio_2015 = pd.merge(CG_FL_OC_DS_IN_OI_Junio, OA_Junio, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop6 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+Junio_2015.drop(columns=columns_to_drop6, inplace=True)
+
+##JULIO##
+
+CG_FL_Julio = pd.merge(CG_Julio, FL_Julio, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop = ['Hogar_y', 'Regis_y', 'Clase_y', 'Mes_y', 'Dpto_y', 'Fex_c_2011_y', 'Area_y']
+CG_FL_Julio.drop(columns=columns_to_drop, inplace=True)
+
+CG_FL_OC_Julio = pd.merge(CG_FL_Julio, Ocu_Julio, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop2 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_Julio.drop(columns=columns_to_drop2, inplace=True)
+
+CG_FL_OC_DS_Julio = pd.merge(CG_FL_OC_Julio, Des_Julio, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop3 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_Julio.drop(columns=columns_to_drop3, inplace=True)
+
+CG_FL_OC_DS_IN_Julio = pd.merge(CG_FL_OC_DS_Julio, Ina_Julio, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop4 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_Julio.drop(columns=columns_to_drop4, inplace=True)
+
+CG_FL_OC_DS_IN_OI_Julio = pd.merge(CG_FL_OC_DS_IN_Julio, OI_Julio, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop5 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_OI_Julio.drop(columns=columns_to_drop5, inplace=True)
+
+Julio_2015 = pd.merge(CG_FL_OC_DS_IN_OI_Julio, OA_Julio, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop6 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+Julio_2015.drop(columns=columns_to_drop6, inplace=True)
+
+##AGOSTO##
+
+CG_FL_Agosto = pd.merge(CG_Agosto, FL_Agosto, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop = ['Hogar_y', 'Regis_y', 'Clase_y', 'Mes_y', 'Dpto_y', 'Fex_c_2011_y', 'Area_y']
+CG_FL_Agosto.drop(columns=columns_to_drop, inplace=True)
+
+CG_FL_OC_Agosto = pd.merge(CG_FL_Agosto, Ocu_Agosto, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop2 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_Agosto.drop(columns=columns_to_drop2, inplace=True)
+
+CG_FL_OC_DS_Agosto = pd.merge(CG_FL_OC_Agosto, Des_Agosto, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop3 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_Agosto.drop(columns=columns_to_drop3, inplace=True)
+
+CG_FL_OC_DS_IN_Agosto = pd.merge(CG_FL_OC_DS_Agosto, Ina_Agosto, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop4 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_Agosto.drop(columns=columns_to_drop4, inplace=True)
+
+CG_FL_OC_DS_IN_OI_Agosto = pd.merge(CG_FL_OC_DS_IN_Agosto, OI_Agosto, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop5 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_OI_Agosto.drop(columns=columns_to_drop5, inplace=True)
+
+Agosto_2015 = pd.merge(CG_FL_OC_DS_IN_OI_Agosto, OA_Agosto, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop6 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+Agosto_2015.drop(columns=columns_to_drop6, inplace=True)
+
+##SEPTIEMBRE##
+
+CG_FL_Septiembre = pd.merge(CG_Septiembre, FL_Septiembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop = ['Hogar_y', 'Regis_y', 'Clase_y', 'Mes_y', 'Dpto_y', 'Fex_c_2011_y', 'Area_y']
+CG_FL_Septiembre.drop(columns=columns_to_drop, inplace=True)
+
+CG_FL_OC_Septiembre = pd.merge(CG_FL_Septiembre, Ocu_Septiembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop2 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_Septiembre.drop(columns=columns_to_drop2, inplace=True)
+
+CG_FL_OC_DS_Septiembre = pd.merge(CG_FL_OC_Septiembre, Des_Septiembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop3 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_Septiembre.drop(columns=columns_to_drop3, inplace=True)
+
+CG_FL_OC_DS_IN_Septiembre = pd.merge(CG_FL_OC_DS_Septiembre, Ina_Septiembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop4 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_Septiembre.drop(columns=columns_to_drop4, inplace=True)
+
+CG_FL_OC_DS_IN_OI_Septiembre = pd.merge(CG_FL_OC_DS_IN_Septiembre, OI_Septiembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop5 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_OI_Septiembre.drop(columns=columns_to_drop5, inplace=True)
+
+Septiembre_2015 = pd.merge(CG_FL_OC_DS_IN_OI_Septiembre, OA_Septiembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop6 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+Septiembre_2015.drop(columns=columns_to_drop6, inplace=True)
+
+##OCTUBRE##
+
+CG_FL_Octubre = pd.merge(CG_Octubre, FL_Octubre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop = ['Hogar_y', 'Regis_y', 'Clase_y', 'Mes_y', 'Dpto_y', 'Fex_c_2011_y', 'Area_y']
+CG_FL_Octubre.drop(columns=columns_to_drop, inplace=True)
+
+CG_FL_OC_Octubre = pd.merge(CG_FL_Octubre, Ocu_Octubre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop2 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_Octubre.drop(columns=columns_to_drop2, inplace=True)
+
+CG_FL_OC_DS_Octubre = pd.merge(CG_FL_OC_Octubre, Des_Octubre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop3 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_Octubre.drop(columns=columns_to_drop3, inplace=True)
+
+CG_FL_OC_DS_IN_Octubre = pd.merge(CG_FL_OC_DS_Octubre, Ina_Octubre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop4 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_Octubre.drop(columns=columns_to_drop4, inplace=True)
+
+CG_FL_OC_DS_IN_OI_Octubre = pd.merge(CG_FL_OC_DS_IN_Octubre, OI_Octubre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop5 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_OI_Octubre.drop(columns=columns_to_drop5, inplace=True)
+
+Octubre_2015 = pd.merge(CG_FL_OC_DS_IN_OI_Octubre, OA_Octubre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop6 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+Octubre_2015.drop(columns=columns_to_drop6, inplace=True)
+
+##NOVIEMBRE##
+
+CG_FL_Noviembre = pd.merge(CG_Noviembre, FL_Noviembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop = ['Hogar_y', 'Regis_y', 'Clase_y', 'Mes_y', 'Dpto_y', 'Fex_c_2011_y', 'Area_y']
+CG_FL_Noviembre.drop(columns=columns_to_drop, inplace=True)
+
+CG_FL_OC_Noviembre = pd.merge(CG_FL_Noviembre, Ocu_Noviembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop2 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_Noviembre.drop(columns=columns_to_drop2, inplace=True)
+
+CG_FL_OC_DS_Noviembre = pd.merge(CG_FL_OC_Noviembre, Des_Noviembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop3 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_Noviembre.drop(columns=columns_to_drop3, inplace=True)
+
+CG_FL_OC_DS_IN_Noviembre = pd.merge(CG_FL_OC_DS_Noviembre, Ina_Noviembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop4 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_Noviembre.drop(columns=columns_to_drop4, inplace=True)
+
+CG_FL_OC_DS_IN_OI_Noviembre = pd.merge(CG_FL_OC_DS_IN_Noviembre, OI_Noviembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop5 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_OI_Noviembre.drop(columns=columns_to_drop5, inplace=True)
+
+Noviembre_2015 = pd.merge(CG_FL_OC_DS_IN_OI_Noviembre, OA_Noviembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop6 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+Noviembre_2015.drop(columns=columns_to_drop6, inplace=True)
+
+##DICIEMBRE##
+
+CG_FL_Diciembre = pd.merge(CG_Diciembre, FL_Diciembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop = ['Hogar_y', 'Regis_y', 'Clase_y', 'Mes_y', 'Dpto_y', 'Fex_c_2011_y', 'Area_y']
+CG_FL_Diciembre.drop(columns=columns_to_drop, inplace=True)
+
+CG_FL_OC_Diciembre = pd.merge(CG_FL_Diciembre, Ocu_Diciembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop2 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_Diciembre.drop(columns=columns_to_drop2, inplace=True)
+
+CG_FL_OC_DS_Diciembre = pd.merge(CG_FL_OC_Diciembre, Des_Diciembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop3 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_Diciembre.drop(columns=columns_to_drop3, inplace=True)
+
+CG_FL_OC_DS_IN_Diciembre = pd.merge(CG_FL_OC_DS_Diciembre, Ina_Diciembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop4 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_Diciembre.drop(columns=columns_to_drop4, inplace=True)
+
+CG_FL_OC_DS_IN_OI_Diciembre = pd.merge(CG_FL_OC_DS_IN_Diciembre, OI_Diciembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop5 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+CG_FL_OC_DS_IN_OI_Diciembre.drop(columns=columns_to_drop5, inplace=True)
+
+Diciembre_2015 = pd.merge(CG_FL_OC_DS_IN_OI_Diciembre, OA_Diciembre, on=['Directorio', 'Secuencia_p', 'Orden'], how='left')
+columns_to_drop6 = ['Hogar', 'Regis', 'Clase', 'Mes', 'Dpto', 'Fex_c_2011', 'Area']
+Diciembre_2015.drop(columns=columns_to_drop6, inplace=True)
+
+## CONSOLIDAR EL AÑO COMPLETO ##
+
+FY_2015 = pd.concat([Enero_2015, Febrero_2015, Marzo_2015, Abril_2015, Mayo_2015, Junio_2015, Julio_2015, Agosto_2015, Septiembre_2015, Octubre_2015,
+                     Noviembre_2015, Diciembre_2015], axis=0)
+
+## Cambiar la , por . en Fex, es decir los factores de expansión ##
+FY_2015['Fex_c_2011_x'] = FY_2015['Fex_c_2011_x'].str.replace(',', '.')
+FY_2015['Fex_c_2011_x'] = pd.to_numeric(FY_2015['Fex_c_2011_x'])
+
+#Crear la variable PET#
+FY_2015['Pet'] = 0
+FY_2015.loc[(FY_2015['P6040'] >= 12) & (FY_2015['Clase_x'] == 1), 'Pet'] = 1
+FY_2015.loc[(FY_2015['P6040'] >= 10) & (FY_2015['Clase_x'] == 2), 'Pet'] = 1
+FY_2015['Pet'].value_counts()
+
+#Test para verificar que las PET son correctas, usar la variable P6240 y debe dar lo mismo# 
+FY_2015['P6240'].value_counts()
+
+##Crear la variable Ocupados##
+###### Variables Float sin comillas, variables de otro tipo con comillas, es decir, variables object ###
+
+FY_2015['Ocupado'] = 0
+FY_2015.loc[(FY_2015['P6240'] == 1) | (FY_2015['P6250'] == "1") | (FY_2015['P6260'] == "1") | (FY_2015['P6270'] == "1"), 'Ocupado'] = 1
+FY_2015['Ocupado'].value_counts()
+
+#### Test para verificar que los ocupados son correctos, usar la variable OCI y debe dar lo mismo #### 
+FY_2015['Oci'].value_counts()
+
+##Factor de expansión: Crear una columna llamada FEX usando el factor de expansión y dividiendolo entre los meses que se estén analizando, 
+##en este caso 12, si fuesen 3 meses habría que dividirlo entre 3##
+
+FY_2015['FEX'] = FY_2015['Fex_c_2011_x'] / 12
+
+##Crear sub base con variables de ingreso y mercado laboral###
+
+Base_Ingresos_2015 = pd.DataFrame(FY_2015, columns=['Directorio' ,'Secuencia_p' ,'Orden' ,'Hogar_x' ,'Regis_x' ,'Mes_x' ,'Dpto_x' ,'Fex_c_2011_x' ,
+                                                   'Area_x' ,'Pet' ,'Ocupado' ,'Oci', 'FEX' ,'P6020' ,'P6040' ,'P6050' ,'P6070' ,'P6210' ,'P6210s1' ,
+                                                   'P5100' ,'P6170' ,'P6500' ,'P6510s1' ,'P6545s1' ,'P6580s1' ,'P6585s1a1' ,'P6585s2a1' ,
+                                                   'P6585s3a1' ,'P6585s4a1' , 'P6590s1' ,'P6600s1' ,'P6610s1' ,'P6620s1' ,'P6630s1a1' ,'P6630s2a1' ,'P6630s3a1' ,
+                                                   'P6630s4a1' ,'P6630s6a1' ,'P6750' ,'P6760' ,'P550' ,'P7070' ,'P7500s1a1' ,'P7500s2a1' ,'P7500s3a1' ,
+                                                   'P7422s1' ,'P7472s1' ,'P7510s1a1' ,'P7510s2a1' ,'P7510s3a1' ,'P7510s5a1' ,'P7510s6a1' ,'P7510s7a1' ,
+                                                   'P6430' ,'P6870' ,'Oficio' ,'P750S1A1' ,'P750S2A1' ,'P1661S1A1' ,'P1661S2A1' ,'P1661S3A1' ,'P1661S4A2' ,
+                                                   'P750S3A1' ,'P6081S1' ,'P6790' ,'P6800' ,'P6850' ,'P6880' ,'P6880S1' ,'P6920' ,'P6930' ,'P6960' ,'P6980S1' ,
+                                                   'P6980S2' ,'P6980S3' ,'P6980S4' ,'P6980S5' ,'P6980S6' ,'P1881' ,'P1882','P6410','P6400','RAMA4D_R4'])
+
+##Cambiar el formato de las variables de object a float64 para hacer cálculos###
+
+variables = ['P6210', 'P6210s1', 'P6500', 'P6510s1', 'P6545s1', 'P6580s1', 'P6585s1a1', 'P6585s2a1', 'P6585s3a1', 
+             'P6585s4a1', 'P6590s1', 'P6600s1', 'P6610s1', 'P6620s1', 'P6630s1a1', 'P6630s2a1', 'P6630s3a1', 'P6630s4a1', 'P6630s6a1', 'P6750',
+             'P6760', 'P550', 'P7070', 'P7500s1a1', 'P7500s2a1', 'P7500s3a1', 'P7422s1', 'P7472s1', 'P7510s1a1',
+             'P7510s2a1', 'P7510s3a1', 'P7510s5a1', 'P7510s6a1', 'P7510s7a1']
+
+for var in variables:
+    Base_Ingresos_2015[var] = Base_Ingresos_2015[var].replace(' ', np.nan)
+    Base_Ingresos_2015[var] = Base_Ingresos_2015[var].astype(float)
+
+##Sumar todos los ingresos
+variables = ['P6500', 'P6510s1', 'P6545s1', 'P6580s1', 'P6585s1a1', 'P6585s2a1', 'P6585s3a1', 'P6585s4a1', 'P6590s1', 'P6600s1', 
+             'P6610s1', 'P6620s1', 'P6630s1a1', 'P6630s2a1', 'P6630s3a1', 'P6630s4a1', 'P6630s6a1', 'P6750', 'P550', 'P7070', 
+             'P7500s1a1', 'P7500s2a1', 'P7500s3a1', 'P7422s1', 'P7472s1', 'P7510s1a1', 'P7510s2a1', 'P7510s3a1', 'P7510s5a1', 'P7510s6a1', 
+             'P7510s7a1', 'P750S1A1', 'P750S2A1', 'P1661S1A1', 'P1661S2A1', 'P1661S3A1', 'P1661S4A2', 'P750S3A1']
+
+Base_Ingresos_2015['Ingreso Total'] = Base_Ingresos_2015[variables].sum(axis=1)
+Base_Ingresos_2015
+
+##GRÁFICAS BÁSICAS#
+import matplotlib.pyplot as plt
+
+##Ingreso total promedio para cada sexo##
+
+# Filtrar el dataframe para obtener los datos correspondientes a cada sexo
+datos_masculinos = Base_Ingresos_2015[Base_Ingresos_2015['P6020'] == 1]
+datos_femeninos = Base_Ingresos_2015[Base_Ingresos_2015['P6020'] == 2]
+
+# Calcular la suma de "Ingreso Total" para cada grupo
+suma_masculinos = datos_masculinos['Ingreso Total'].mean()
+suma_femeninos = datos_femeninos['Ingreso Total'].mean()
+
+# Crear el gráfico de barras
+plt.bar(['Masculino', 'Femenino'], [suma_masculinos, suma_femeninos])
+
+# Agregar etiquetas y título al gráfico
+plt.xlabel('Sexo')
+plt.ylabel('IngresoPromedio')
+plt.title('IngresoPromedio Total por Sexo')
+
+# Mostrar el gráfico
+plt.show()
+
+##Ingreso promedio por área y sexo ##
+
+# Filtrar el dataframe para incluir solo las áreas 05, 08 y 11
+areas_seleccionadas = ['05' ,'08' ,'11' ,'13' ,'17' ,'23' ,'50' ,'52' ,'54' ,'66' ,'68' ,'73' ,'76']
+datos_filtrados = Base_Ingresos_2015[Base_Ingresos_2015['Area_x'].isin(areas_seleccionadas)]
+
+# Calcular el promedio de "Ingreso Total" por sexo y área
+promedio_por_sexo_area = datos_filtrados.pivot_table(index='Area_x', columns='P6020', values='Ingreso Total', aggfunc='mean')
+# Ordenar las áreas de mayor a menor promedio
+promedio_por_sexo_area = promedio_por_sexo_area.sort_values(by=1, ascending=False)
+# Crear el gráfico de barras agrupadas
+fig, ax = plt.subplots()
+ancho_barras = 0.35
+
+# Obtener los índices para las posiciones de las barras
+indices = range(len(promedio_por_sexo_area))
+
+# Graficar las barras para cada área y sexo
+ax.bar(indices, promedio_por_sexo_area[1], ancho_barras, label='Masculino')
+ax.bar([i + ancho_barras for i in indices], promedio_por_sexo_area[2], ancho_barras, label='Femenino')
+
+# Configurar las etiquetas y el título del gráfico
+ax.set_xlabel('Área')
+ax.set_ylabel('Promedio de Ingreso Total')
+ax.set_title('Promedio de Ingreso Total por Área y Sexo')
+
+# Configurar las etiquetas del eje x
+nombres_areas = {'05': 'Medellín', '08': 'Barranquilla', '11': 'Bogotá','13' : 'Cartagena', '17' : 'Manizales', '23' : 'Montería','50' : 'Villavicencio','52' : 'Pasto','54' : 'Cúcuta','66' : 'Pereira','68' : 'Bucaramanga','73' : 'Ibagué','76' : 'Cali'}
+etiquetas_areas = [nombres_areas[area] for area in promedio_por_sexo_area.index]
+ax.set_xticks(indices)
+ax.set_xticklabels(etiquetas_areas, rotation=90)
+
+# Agregar una leyenda
+ax.legend()
+
+# Mostrar el gráfico
+plt.show()
+
+##Ingreso por nivel educativo##
+
+# Renombrar las opciones de P6210
+Base_Ingresos_2015['P6210'] = Base_Ingresos_2015['P6210'].replace({
+    9: 'No sabe, no informa',
+    6: 'Superior o universitaria',
+    5: 'Media (10o - 13o)',
+    4: 'Básica secundaria (6o - 9o)',
+    3: 'Básica primaria (1o - 5o)',
+    2: 'Preescolar',
+    1: 'Ninguno'
+})
+
+# Calcular el promedio de Ingreso Total para cada opción de P6210 y ordenar de mayor a menor
+promedios = Base_Ingresos_2015.groupby('P6210')['Ingreso Total'].mean().sort_values(ascending=False)
+
+# Crear la gráfica de barras
+promedios.plot(kind='bar')
+
+# Personalizar la gráfica
+plt.title('Promedio de Ingreso Total por Nivel Educativo')
+plt.xlabel('Nivel Educativo')
+plt.ylabel('Promedio de Ingreso Total')
+
+# Mostrar la gráfica
+plt.show()
